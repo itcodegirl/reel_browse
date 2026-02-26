@@ -12,7 +12,7 @@
 
 	<!-- All HTML will go here -->
 	<nav>
-			<!-- an SVG clapperboard icon representing the logo of the website -->
+		<!-- an SVG clapperboard icon representing the logo of the website -->
 		<a class="nav-logo" onclick="goHome()">
 			<div class="nav-logo-icon">
 				<svg viewBox="0 0 24 24">
@@ -28,13 +28,15 @@
 				<!--  an SVG magnifying glass icon inside the search input -->
 				<svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"
 					stroke="currentColor">
-					<circle cx="11" cy="11" r="8"></circle>
+					<circle cx="11" cy="11" r="8" />
 					<line x1="21" y1="21" x2="16.65" y2="16.65" />
 				</svg>
 				<!--  two interactive elements inside the search bar — the text input and the clear button-->
-				<input type="text" id="searchInput" placeholder="Search reels..." oninput="handleSearch()"
-					onkeydown="if(event.key==='Enter') executeSearch()">
-				<button class=="search-clear" id="searchClear" onclick="clearSearch()">x</button>
+				<input type="text" id="searchInput" 
+						placeholder="Search reels..." 
+						oninput="handleSearch()"
+						onkeydown="if(event.key==='Enter') executeSearch()">
+				<button class="search-clear" id="searchClear" onclick="clearSearch()">x</button>
 			</div>
 		</div>
 
@@ -48,9 +50,22 @@
 			<span class="watchlist-count" id="watchlistCount">0</span>
 		</button>
 	</nav>
-	<script>
-		// All JavaScript will go here
-	</script>
+	<section class="hero" id="heroSection">
+		<div class="hero-backdrop" id="heroBackdrop"></div>
+		<div class="hero-content">
+			<div class="hero-info" id="heroInfo">
+				<!-- JavaScript will fill this -->
+			</div>
+		</div>
+	</section>
+
+	<main id="mainContent">
+		<!-- JavaScript will dynamically insert content here -->
+	</main>
+
+	<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
+		<div class="modal" id="modalContent"></div>
+	</div>
 </body>
 
 </html>
