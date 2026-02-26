@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Movie & TV Browser</title>
+	<title>Reel Browse</title>
 	<style>
 		/* All CSS will go here */
 	</style>
@@ -13,7 +13,42 @@
 <body>
 
 	<!-- All HTML will go here -->
+	<nav>
+		<a class="nav-logo" onclick="goHome()">
+			<div class="nav-logo-icon">
+				/* ReelFinder logo SVG */
+				<svg viewBox="0 0 24 24">
+					<path
+						d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z" />
+				</svg>
+			</div>
+			<span class="nav-logo-text">Reel<em>Finder</em></span>
+		</a>
 
+		<div class="nav-conter">
+			<div class="search-box">
+				<!--  an SVG magnifying glass icon inside the search input -->
+				<svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+					<circle cx="11" cy="11" r="8"></circle>
+					<line x1="21" y1="21" x2="16.65" y2="16.65" />
+				</svg>
+				<!--  two interactive elements inside the search bar — the text input and the clear button-->
+				<input type="text" id="searchInput" placeholder="Search reels..." oninput="handleSearch()"
+					onkeydown="if(event.key==='Enter') executeSearch()">
+				<button class=="search-clear" id="searchClear" onclick="clearSearch()">x</button>
+			</div>
+		</div>
+
+		<div class="nav-tabs">
+			<button class="nav-tab active" data-type="movie" onclick="switchType('movie', this)">Movies</button>
+			<button class="nav-tab" data-type="tv" onclick="switchType('tv', this)">TV Shows</button>
+		</div>
+
+		<button class="nav-watchlist" onclick="goToWatchlist()">
+			♥ Watchlist
+			<span class="watchlist-count" id="watchlistCount">0</span>
+		</button>
+	</nav>
 	<script>
 		// All JavaScript will go here
 	</script>
