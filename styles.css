@@ -1,0 +1,136 @@
+/* ─── RESET ─── */
+/* Remove default margins/padding and use border-box sizing */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ─── CSS VARIABLES ─── */
+/* Define reusable values in one place. Change these to retheme the entire app */
+:root {
+	--bg-primary: #07060b;
+	--bg-card: #110f18;
+	--bg-surface: #0d0c14;
+	--text-primary: #f0eef5;
+	--text-secondary: #9490a5;
+	--text-muted: #5c5872;
+	--accent: #e8364e;
+	--gold: #f5c518;
+	--border: #1e1b28;
+}
+
+html {
+	scroll-behavior: smooth;
+	/* Smooth scrolling when using anchor links */
+}
+
+body {
+	font-family: sans-serif;
+	/* We'll upgrade this later */
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	min-height: 100vh;
+}
+
+/* ─── NAVIGATION ─── */
+nav {
+	position: fixed;
+	/* Stays at the top when scrolling */
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	/* Ensures nav stays above all other content */
+	padding: 0 40px;
+	height: 68px;
+	display: flex;
+	/* Lays children out in a row */
+	align-items: center;
+	/* Vertically centers children */
+	justify-content: space-between;
+	/* Spreads children across the row */
+	background: rgba(7, 6, 11, 0.8);
+	/* Semi-transparent background */
+	backdrop-filter: blur(20px);
+	/* Frosted glass blur effect */
+	border-bottom: 1px solid var(--border);
+}
+
+/* ─── SEARCH BOX ─── */
+.nav-center {
+	flex: 1;
+	/* Takes up available space between logo and tabs */
+	max-width: 480px;
+	/* But never wider than 480px */
+	margin: 0 32px;
+	/* Spacing on left and right */
+}
+
+.search-box {
+	position: relative;
+	/* So we can position the icon absolutely inside */
+	width: 100%;
+}
+
+.search-box input {
+	width: 100%;
+	padding: 10px 16px 10px 42px;
+	/* Extra left padding for the search icon */
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+	border-radius: 40px;
+	/* Fully rounded edges */
+	color: var(--text-primary);
+	font-size: 14px;
+	outline: none;
+	/* Removes the default blue outline */
+}
+
+.search-box input:focus {
+	border-color: var(--accent);
+	/* Highlights border when typing */
+	box-shadow: 0 0 0 3px rgba(232, 54, 78, 0.15);
+	/* Soft glow effect */
+}
+
+.search-box input::placeholder {
+	color: var(--text-muted);
+	/* Lighter color for placeholder text */
+}
+
+.search-box .search-icon {
+	position: absolute;
+	/* Positioned inside the input */
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	/* Perfectly vertically centered */
+	color: var(--text-muted);
+	pointer-events: none;
+	/* Clicks pass through to the input */
+}
+
+.search-box .search-clear {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: var(--border);
+	border: none;
+	color: var(--text-secondary);
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: none;
+	/* Hidden by default, shown via JavaScript */
+}
+
+.search-box .search-clear.visible {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
