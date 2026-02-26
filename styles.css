@@ -134,3 +134,39 @@ nav {
 	align-items: center;
 	justify-content: center;
 }
+
+/* ─── LOGO ─── */
+.nav-logo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.nav-logo-icon {
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background: var(--accent);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-logo-icon svg {
+	width: 18px;
+	height: 18px;
+	fill: white;
+}
+
+.nav-logo-text {
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--text-primary);
+}
+
+.nav-logo-text em {
+	color: var(--accent);
+	font-style: italic;
+}
