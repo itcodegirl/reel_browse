@@ -170,3 +170,32 @@ nav {
 	color: var(--accent);
 	font-style: italic;
 }
+
+/* ─── NAV TABS (Movies / TV Shows) ─── */
+.nav-tabs {
+	display: flex;
+	gap: 4px;
+}
+
+.nav-tab {
+	padding: 8px 18px;
+	border-radius: 40px;
+	border: none;
+	background: transparent;
+	color: var(--text-secondary);
+	font-size: 13px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: 0.3s;
+	/* Smooth color and background changes */
+}
+
+.nav-tab:hover {
+	color: var(--text-primary);
+	background: var(--border);
+}
+
+.nav-tab.active {
+	background: var(--accent);
+	color: white;
+}
