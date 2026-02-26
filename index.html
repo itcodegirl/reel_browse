@@ -32,10 +32,8 @@
 					<line x1="21" y1="21" x2="16.65" y2="16.65" />
 				</svg>
 				<!--  two interactive elements inside the search bar — the text input and the clear button-->
-				<input type="text" id="searchInput" 
-						placeholder="Search reels..." 
-						oninput="handleSearch()"
-						onkeydown="if(event.key==='Enter') executeSearch()">
+				<input type="text" id="searchInput" placeholder="Search reels..." oninput="handleSearch()"
+					onkeydown="if(event.key==='Enter') executeSearch()">
 				<button class="search-clear" id="searchClear" onclick="clearSearch()">x</button>
 			</div>
 		</div>
@@ -50,6 +48,8 @@
 			<span class="watchlist-count" id="watchlistCount">0</span>
 		</button>
 	</nav>
+
+	<!-- ═══ HERO ═══ -->
 	<section class="hero" id="heroSection">
 		<div class="hero-backdrop" id="heroBackdrop"></div>
 		<div class="hero-content">
@@ -59,10 +59,12 @@
 		</div>
 	</section>
 
+	<!-- ═══ MAIN ═══ -->
 	<main id="mainContent">
 		<!-- JavaScript will dynamically insert content here -->
 	</main>
 
+	<!-- ═══ MODAL ═══ -->
 	<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
 		<div class="modal" id="modalContent"></div>
 	</div>
